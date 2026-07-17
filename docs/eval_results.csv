@@ -1,0 +1,33 @@
+query,expected_agents,predicted_agents,routing_ok,routing_confidence,expected_source,top_source,top_score,retrieval_ok,n_chunks,route_ms,retrieval_ms
+How long until my money comes back after I return something?,billing,billing,True,0.55,refund_policy.pdf,refund_policy.pdf,0.508,True,4,0.2,1.9
+I was charged twice for the same order,billing,billing,True,0.55,refund_policy.pdf,user_manual.pdf,0.4857,False,4,0.1,0.8
+The bank took the money but I never got an order confirmation,billing,billing,True,0.55,refund_policy.pdf,user_manual.pdf,0.5734,True,4,0.1,0.6
+Can I get an invoice with my company GST number on it?,billing|product,billing,True,0.55,pricing.pdf,pricing.pdf,0.5008,True,4,0.1,0.4
+Is there a fee for cash on delivery?,billing|faq,product,False,0.55,faq.pdf,shipping_policy.pdf,0.5205,False,4,0.1,0.5
+I want to cancel my annual Premium and get my money back,billing,billing,True,0.55,faq.pdf,user_manual.pdf,0.4758,False,4,0.1,0.5
+"The item I bought is cheaper now, can I get the difference?",billing|product,product,True,0.55,pricing.pdf,pricing.pdf,0.5157,True,4,0.1,0.7
+"I can't log in, it says my account is locked",technical,technical,True,0.55,user_manual.pdf,warranty.pdf,0.4151,True,4,0.1,0.5
+The password reset email never arrived,technical,technical,True,0.55,user_manual.pdf,user_manual.pdf,0.6091,True,4,0.1,0.6
+Only the left earbud is playing music,technical,faq,False,0.55,user_manual.pdf,shipping_policy.pdf,0.4127,False,3,0.1,0.5
+My smart plug won't connect to my wifi during setup,technical,technical,True,0.55,installation_guide.pdf,installation_guide.pdf,0.4855,True,4,0.1,0.5
+Laptop is getting very hot and the fan is loud,technical,faq,False,0.55,user_manual.pdf,shipping_policy.pdf,0.4845,False,3,0.1,0.5
+How do I pair my earbuds to a second phone?,technical,technical,True,0.55,installation_guide.pdf,installation_guide.pdf,0.444,True,4,0.1,0.4
+I keep getting a blue screen on my new NoteBook,technical,technical,True,0.55,user_manual.pdf,user_manual.pdf,0.4704,True,4,0.1,0.6
+Never received the OTP to verify my number,technical,technical,True,0.55,installation_guide.pdf,user_manual.pdf,0.5438,True,4,0.1,0.5
+My soundbar subwoofer light keeps blinking,technical,faq,False,0.55,installation_guide.pdf,faq.pdf,0.4325,False,3,0.1,0.6
+What's the difference between the Air 14 and the Pro 16?,product,product,True,0.55,pricing.pdf,warranty.pdf,0.535,True,4,0.1,0.5
+How much does the Pulse Buds Pro cost?,product,product,True,0.55,pricing.pdf,products.pdf,0.4515,False,4,0.1,0.4
+Can I upgrade the RAM in the NoteBook Go 13?,product,faq,False,0.55,products.pdf,,0.0,False,0,0.1,0.7
+Which laptop should I buy for video editing?,product,product,True,0.55,pricing.pdf,products.pdf,0.4213,True,4,0.1,0.5
+How long does standard delivery take?,product,product,True,0.55,shipping_policy.pdf,shipping_policy.pdf,0.5984,True,4,0.1,0.5
+Do you deliver to my pincode in Assam?,product,billing,False,0.55,shipping_policy.pdf,refund_policy.pdf,0.4246,False,4,0.1,0.4
+Does the SmartCam work on a 5GHz network?,product|technical,faq,False,0.55,products.pdf,faq.pdf,0.3924,False,2,0.1,0.4
+How long is the warranty on a smartphone charger?,product|technical,billing,False,0.55,warranty.pdf,user_manual.pdf,0.4916,False,4,0.1,0.5
+This is the third time I'm chasing this refund. Absolutely unacceptable.,complaint,billing|complaint,True,0.55,refund_policy.pdf,user_manual.pdf,0.5264,True,4,0.1,0.5
+Your service is terrible and I want to speak to a manager,complaint,complaint,True,0.55,refund_policy.pdf,shipping_policy.pdf,0.4375,True,4,0.1,0.4
+I'm going to take this to consumer court,complaint,complaint,True,0.55,refund_policy.pdf,shipping_policy.pdf,0.4055,True,4,0.1,0.5
+"Nobody has replied to my emails for a week, I'm furious",complaint,complaint,True,0.55,,refund_policy.pdf,0.5002,,4,0.1,0.6
+What are your customer support hours?,faq,faq,True,0.55,faq.pdf,faq.pdf,0.4474,True,4,0.1,0.5
+Where is your head office located?,faq,faq,True,0.55,faq.pdf,shipping_policy.pdf,0.426,True,3,0.1,0.6
+How do I delete my account and my data?,faq,faq,True,0.55,faq.pdf,faq.pdf,0.388,True,4,0.1,0.5
+I paid for Premium yesterday but it's still locked,billing|technical,billing|technical,True,0.55,user_manual.pdf,user_manual.pdf,0.4943,True,4,0.1,0.6

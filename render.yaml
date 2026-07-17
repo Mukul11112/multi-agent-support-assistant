@@ -1,0 +1,27 @@
+# Render deployment (backend).
+# The knowledge base PDFs and the FAISS index are built at deploy time rather
+# than committed, so the index can never drift out of sync with the documents.
+services:
+  - type: web
+    name: techmart-support-api
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python scripts/build_kb.py
+      python -m backend.rag.ingest
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false          # set in the dashboard, never in git
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false          # https://your-app.vercel.app

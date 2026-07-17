@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+  /* Keyboard focus must stay visible; the default ring is removed by Tailwind's
+     reset on some elements. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-paper;
+  }
+}
+
+@layer utilities {
+  .agent-billing   { color: theme('colors.billing'); }
+  .agent-technical { color: theme('colors.technical'); }
+  .agent-product   { color: theme('colors.product'); }
+  .agent-complaint { color: theme('colors.complaint'); }
+  .agent-faq       { color: theme('colors.faq'); }
+
+  .scrollbar-thin::-webkit-scrollbar { width: 8px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-line-strong rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
