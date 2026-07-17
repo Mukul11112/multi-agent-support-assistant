@@ -40,6 +40,11 @@ DEFAULT_MODELS = {
 
 # --- Embeddings / RAG ------------------------------------------------------
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
+# Force the lightweight lexical hashing embedder instead of loading the
+# sentence-transformers (PyTorch) model. Set this on memory-constrained hosts
+# such as Render's 512 MB free tier, where loading PyTorch is killed for OOM.
+# Local/full-quality runs should leave this unset (false).
+FORCE_HASHING_EMBEDDER = _bool("FORCE_HASHING_EMBEDDER", "false")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "900"))          # characters
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "150"))    # characters
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "4"))

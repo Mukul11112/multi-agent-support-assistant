@@ -84,6 +84,15 @@ def get_embedder() -> BaseEmbedder:
     global _instance
     if _instance is not None:
         return _instance
+    if config.FORCE_HASHING_EMBEDDER:
+        # Explicitly requested (e.g. on a 512 MB host where PyTorch is OOM-killed).
+        # Skip loading sentence-transformers entirely rather than crashing on it.
+        _instance = HashingEmbedder()
+        log.info(
+            "Embedder: %s (dim=%d) - forced via FORCE_HASHING_EMBEDDER",
+            _instance.name, _instance.dim,
+        )
+        return _instance
     try:
         _instance = SentenceTransformerEmbedder(config.EMBEDDING_MODEL)
         log.info("Embedder: %s (dim=%d)", _instance.name, _instance.dim)
