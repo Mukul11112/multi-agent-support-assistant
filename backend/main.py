@@ -1,5 +1,5 @@
 """
-FastAPI entrypoint.
+FastAPI entrypoint
 
 Run:  uvicorn backend.main:app --reload
 Docs: http://localhost:8000/docs
